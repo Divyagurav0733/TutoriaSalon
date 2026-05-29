@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
+/*  Reset & Base  */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --dark:    #1a1423;
+  --deep:    #372549;
+  --mauve:   #774c60;
+  --rose:    #b75d69;
+  --blush:   #eacdc2;
+  --blush2:  #f5ede9;
+  --muted:   #e2cdd8;
+
+  /* legacy aliases so existing code still works */
+  --cream:    #eacdc2;
+  --lavender: #e2cdd8;
+  --pink:     #b75d69;
+  --purple:   #372549;
+  --navy:     #1a1423;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--blush2);
+  color: var(--dark);
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.15;
+  color: var(--deep);
+}
+
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+button { font-family: 'Inter', sans-serif; }
+
+/*  Scrollbar  */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--blush); }
+::-webkit-scrollbar-thumb { background: var(--mauve); border-radius: 3px; }
+
+/*  Buttons  */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(183, 93, 105, 0.35);
+}
+.btn-primary:hover {
+  background: var(--mauve);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(119, 76, 96, 0.4);
+}
+.btn-primary:active  { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: transparent;
+  color: var(--deep);
+  border: 1.5px solid var(--mauve);
+  padding: 11px 26px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  background: var(--deep);
+  color: white;
+  border-color: var(--deep);
+  transform: translateY(-1px);
+}
+
+/*  Form Elements  */
+input, select, textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  border: 1.5px solid var(--muted);
+  border-radius: 12px;
+  padding: 12px 16px;
+  width: 100%;
+  outline: none;
+  background: white;
+  transition: border 0.2s, box-shadow 0.2s;
+  color: var(--dark);
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(183,93,105,0.1);
+}
+input:disabled { background: #f5f2f0; cursor: not-allowed; }
+
+label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  opacity: 0.75;
+  display: block;
+  margin-bottom: 6px;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 4px; }
+.error-text  { color: var(--rose); font-size: 12px; margin-top: 3px; }
+
+/*  Layout helpers  */
+.section       { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.section-title {
+  font-size: clamp(30px, 4.5vw, 50px);
+  color: var(--deep);
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.section-sub {
+  font-size: 15px;
+  color: var(--dark);
+  opacity: 0.55;
+  margin-bottom: 48px;
+  font-family: 'Inter', sans-serif;
+}
+
+/*  Decorative divider  */
+.divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 0 auto 40px; max-width: 200px;
+}
+.divider::before, .divider::after {
+  content: ""; flex: 1; height: 1px; background: var(--muted);
+}
+.divider-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--rose); flex-shrink: 0;
+}
+
+/*  Animations  */
+@keyframes fadeInUp  { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn    { from { opacity:0; } to { opacity:1; } }
+@keyframes slideDown { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse     { 0%,100% { transform:scale(1); } 50% { transform:scale(1.04); } }
+@keyframes spin      { to { transform:rotate(360deg); } }
+@keyframes shimmer   { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+
+.fade-in-up { animation: fadeInUp 0.65s ease both; }
+.fade-in    { animation: fadeIn   0.4s  ease both; }
+
+/*  Spinner  */
+.spinner {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 3px solid var(--muted);
+  border-top-color: var(--rose);
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+.spinner-sm {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: white;
+  animation: spin 0.7s linear infinite;
+  display: inline-block; vertical-align: middle;
+}
+
+/*  Badge  */
+.badge {
+  display: inline-block; padding: 3px 12px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.6px; font-family: 'Inter', sans-serif;
+}
+.badge-upcoming  { background: rgba(55,37,73,0.1);  color: var(--deep); }
+.badge-completed { background: rgba(74,160,74,0.12); color: #2a7a2a; }
+.badge-cancelled { background: rgba(183,93,105,0.12); color: var(--rose); }
+
+/*  Card  */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 16px rgba(26,20,35,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(183,93,105,0.14);
+}
+
+/*  Page header  */
+.page-header { padding: 80px 24px 48px; text-align: center; }
+
+/*  Selection color  */
+::selection { background: rgba(183,93,105,0.2); }
+
+/*  Responsive  */
+@media (max-width: 768px) {
+  .section { padding: 50px 16px; }
+  .section-title { font-size: 28px; }
+  .btn-primary, .btn-outline { padding: 11px 22px; font-size: 13px; }
+  .page-header { padding: 90px 20px 36px; }
+}
