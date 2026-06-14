@@ -171,7 +171,7 @@ export default function StylistsPage() {
           background: "white", color: C.purple, fontWeight: 700,
           padding: "13px 36px", borderRadius: 30, fontSize: 15,
         }}>
-          Book an Appointment &#10022
+          Book an Appointment
         </Link>
       </div>
 
