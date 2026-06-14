@@ -13,7 +13,7 @@ export default function HomePage() {
   return (
     <div style={{ background: "#f5ede9" }}>
 
-      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      {/*  Hero  */}
       <section style={{
         minHeight: "100vh",
         background: `linear-gradient(150deg, ${C.dark} 0%, #2d1f3d 45%, #3d2035 100%)`,
@@ -99,7 +99,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Services Preview ─────────────────────────────────────────── */}
+      {/*  Services Preview  */}
       <section style={{ padding:"88px 24px", background:"white" }}>
         <div style={{ maxWidth:1200, margin:"0 auto" }}>
           <div style={{ textAlign:"center", marginBottom:16 }}>
@@ -145,7 +145,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Why Choose Us ────────────────────────────────────────────── */}
+      {/*  Why Choose Us  */}
       <section style={{ padding:"88px 24px", background:`linear-gradient(135deg,${C.dark} 0%,#2a1a2e 100%)` }}>
         <div style={{ maxWidth:1200, margin:"0 auto" }}>
           <div style={{ textAlign:"center", marginBottom:16 }}>
@@ -175,7 +175,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Stylists Preview ─────────────────────────────────────────── */}
+      {/*  Stylists Preview  */}
       {stylists.length > 0 && (
         <section style={{ padding:"88px 24px", background:"white" }}>
           <div style={{ maxWidth:1200, margin:"0 auto" }}>
@@ -220,7 +220,7 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* ── CTA Strip ────────────────────────────────────────────────── */}
+      {/*  CTA Strip  */}
       <section style={{ padding:"80px 24px", background:`linear-gradient(135deg,${C.rose},${C.mauve},${C.deep})`, textAlign:"center", position:"relative", overflow:"hidden" }}>
         <div style={{ position:"absolute", inset:0, background:"url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=40') center/cover no-repeat", opacity:0.08 }} />
         <div style={{ position:"relative" }}>

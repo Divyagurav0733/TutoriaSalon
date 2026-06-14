@@ -6,7 +6,7 @@ const BASE_URL = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
   : "/api";
 
-// ── Axios instance ─────────────────────────────────────────────────────────
+//  Axios instance 
 const api = axios.create({
   baseURL: BASE_URL,
   headers: { "Content-Type": "application/json" },
@@ -37,20 +37,20 @@ api.interceptors.response.use(
   }
 );
 
-// ── Auth ─────────────────────────────────────────────────────────────────────
+//  Auth 
 export const authAPI = {
   register: (data) => api.post("/auth/register", data),
   login:    (data) => api.post("/auth/login",    data),
   getMe:    ()     => api.get("/auth/me"),
 };
 
-// ── Stylists ──────────────────────────────────────────────────────────────────
+//  Stylists 
 export const stylistAPI = {
   getAll: ()    => api.get("/stylists"),
   getOne: (id)  => api.get(`/stylists/${id}`),
 };
 
-// ── Bookings ──────────────────────────────────────────────────────────────────
+//  Bookings 
 export const bookingAPI = {
   getSlots: (stylistId, date, duration) =>
     api.get(`/bookings/slots?stylistId=${stylistId}&date=${date}&duration=${duration}`),
@@ -59,7 +59,7 @@ export const bookingAPI = {
   cancel:   (id)   => api.put(`/bookings/${id}/cancel`),
 };
 
-// ── Admin ─────────────────────────────────────────────────────────────────────
+//  Admin 
 export const adminAPI = {
   getStats:      ()           => api.get("/admin/stats"),
   getBookings:   (params)     => api.get("/admin/bookings", { params }),

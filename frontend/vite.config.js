@@ -12,8 +12,9 @@ export default defineConfig(({ mode }) => {
       proxy: !env.VITE_API_URL
         ? {
             "/api": {
-              target: "http://localhost:5000",
+              target: "https://tutoriasalon.onrender.com",
               changeOrigin: true,
+              secure: true,
             },
           }
         : undefined,
@@ -31,3 +32,4 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
+

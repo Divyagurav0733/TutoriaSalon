@@ -81,7 +81,7 @@ export default function AccountPage() {
       <div style={{ maxWidth:800,margin:"0 auto",padding:"32px 20px" }}>
         {error && (
           <div style={{ background:"#fff3e0",border:"1px solid #ff9800",borderRadius:12,padding:"12px 16px",fontSize:13,color:"#e65100",marginBottom:20,whiteSpace:"pre-line" }}>
-            ⚠️ {error}
+             {error}
             <button onClick={() => setError("")} style={{ float:"right",background:"none",border:"none",cursor:"pointer",fontSize:16,color:"#e65100" }}>✕</button>
           </div>
         )}
@@ -100,7 +100,7 @@ export default function AccountPage() {
           <div style={{ textAlign:"center",padding:"60px 0" }}><div className="spinner" /></div>
         ) : filtered.length === 0 ? (
           <div style={{ textAlign:"center",padding:"60px 20px",background:"white",borderRadius:20 }}>
-            <div style={{ fontSize:48,marginBottom:16 }}>📋</div>
+            <div style={{ fontSize:48,marginBottom:16 }}></div>
             <p style={{ color:C.navy,opacity:0.55,fontSize:15 }}>No {tab} appointments</p>
             {tab==="upcoming" && <Link to="/book" className="btn-primary" style={{ marginTop:16,display:"inline-block",textDecoration:"none" }}>Book Now ✦</Link>}
           </div>
@@ -138,7 +138,7 @@ export default function AccountPage() {
                       )}
                       {pastDeadline && (
                         <div style={{ fontSize:11,color:"#e65100",maxWidth:190,textAlign:"right",lineHeight:1.6 }}>
-                          ⚠️ Within 24h — to cancel, call<br />
+                           Within 24h — to cancel, call<br />
                           <a href="tel:+919876543210" style={{ color:"#c62828",fontWeight:600,textDecoration:"none" }}>+91 98765 43210</a><br />
                           <a href="/contact" style={{ color:C.purple,fontSize:10,textDecoration:"none" }}>or Contact Us →</a>
                         </div>

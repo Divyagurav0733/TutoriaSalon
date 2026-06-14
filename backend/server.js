@@ -19,7 +19,7 @@ connectDB();
 
 const app = express();
 
-// ── CORS ─────────────────────────────────────────────────────────────────────
+//  CORS 
 // Allow the configured frontend URL + localhost for dev
 const allowedOrigins = [
   process.env.FRONTEND_URL,
@@ -42,7 +42,7 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 if (process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 
-// ── Routes ───────────────────────────────────────────────────────────────────
+//  Routes 
 app.use("/api/auth",     require("./routes/authRoutes"));
 app.use("/api/bookings", require("./routes/bookingRoutes"));
 app.use("/api/stylists", require("./routes/stylistRoutes"));
@@ -59,14 +59,14 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// ── Error Middleware ─────────────────────────────────────────────────────────
+//  Error Middleware 
 app.use(notFound);
 app.use(errorHandler);
 
-// ── Start ─────────────────────────────────────────────────────────────────────
+//  Start 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, async () => {
-  console.log(`\n🚀 Tutoria API running on port ${PORT}`);
-  console.log(`📦 Environment: ${process.env.NODE_ENV}`);
+  console.log(`\nTutoria API running on port ${PORT}`);
+  console.log(`Environment: ${process.env.NODE_ENV}`);
   await verifyEmailConfig();
 });

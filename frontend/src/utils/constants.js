@@ -1,4 +1,4 @@
-// ── Brand Colors — New Palette ────────────────────────────────────────────────
+//  Brand Colors — New Palette 
 export const C = {
   dark:    "#1a1423",   // deep dark plum — darkest bg, footers
   deep:    "#372549",   // rich eggplant — primary brand color
@@ -13,7 +13,7 @@ export const C = {
   navy:    "#1a1423",
 };
 
-// ── Services ──────────────────────────────────────────────────────────────────
+//  Services 
 export const SERVICES = {
   female: [
     { id: "f1", name: "Hair Cut & Styling",  price: 650,  duration: 60  },

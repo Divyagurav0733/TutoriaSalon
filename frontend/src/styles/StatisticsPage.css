@@ -314,7 +314,7 @@
 .rev-month { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--dark); opacity: 0.55; }
 .rev-count { font-family: 'Inter', sans-serif; font-size: 10px; color: var(--dark); opacity: 0.35; }
 
-/* ── Power BI card ───────────────────────────────────────────────────────────── */
+/*  Power BI card  */
 .powerbi-card {
   background: white;
   border-radius: 22px;
@@ -407,7 +407,7 @@
   font-weight: 500;
 }
 
-/* ── Responsive ──────────────────────────────────────────────────────────────── */
+/*  Responsive  */
 @media (max-width: 860px) {
   .charts-grid,
   .admin-charts-grid { grid-template-columns: 1fr; }

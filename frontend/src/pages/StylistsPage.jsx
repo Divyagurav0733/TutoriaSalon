@@ -55,7 +55,7 @@ export default function StylistsPage() {
   return (
     <div style={{ paddingTop: 80, minHeight: "100vh", background: C.cream }}>
 
-      {/* ── Hero banner ─────────────────────────────────────────────── */}
+      {/*  Hero banner */}
       <div style={{
         background: `linear-gradient(135deg,${C.pink}50,${C.lavender},${C.purple}20)`,
         padding: "60px 24px 48px", textAlign: "center",
@@ -86,7 +86,7 @@ export default function StylistsPage() {
         </div>
       </div>
 
-      {/* ── Gender filter tabs ───────────────────────────────────────── */}
+      {/*  Gender filter tabs  */}
       <div style={{ background: "white", borderBottom: `1px solid ${C.lavender}`, position: "sticky", top: 68, zIndex: 50 }}>
         <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 24px", display: "flex", gap: 4 }}>
           {[
@@ -126,7 +126,7 @@ export default function StylistsPage() {
         </div>
       </div>
 
-      {/* ── Stylist grid ─────────────────────────────────────────────── */}
+      {/*  Stylist grid  */}
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "40px 20px 60px" }}>
 
         {loading && (
@@ -158,7 +158,7 @@ export default function StylistsPage() {
         )}
       </div>
 
-      {/* ── Bottom CTA ───────────────────────────────────────────────── */}
+      {/*  Bottom CTA  */}
       <div style={{ background: `linear-gradient(135deg,${C.purple},${C.navy})`, padding: "48px 24px", textAlign: "center" }}>
         <h2 style={{ fontFamily: "Cormorant Garamond", fontSize: "clamp(24px,4vw,38px)", color: "white", fontStyle: "italic", marginBottom: 10 }}>
           Ready for your transformation?
@@ -171,7 +171,7 @@ export default function StylistsPage() {
           background: "white", color: C.purple, fontWeight: 700,
           padding: "13px 36px", borderRadius: 30, fontSize: 15,
         }}>
-          Book an Appointment ✦
+          Book an Appointment &#10022
         </Link>
       </div>
 
@@ -179,7 +179,7 @@ export default function StylistsPage() {
   );
 }
 
-/* ── Individual Stylist Card ─────────────────────────────────────────────── */
+/*  Individual Stylist Card  */
 function StylistCard({ stylist: s }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -339,7 +339,7 @@ function StylistCard({ stylist: s }) {
           onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
           onMouseLeave={e => e.currentTarget.style.opacity = "1"}
         >
-          Book with {s.name.split(" ")[0]} ✦
+          Book with {s.name.split(" ")[0]} 
         </Link>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { C, SERVICES, SERVICE_MAP } from "../utils/constants";
 import { getUpcomingDates, dateStr, formatDate, formatCurrency } from "../utils/helpers";
 import { DAY_NAMES, MONTH_NAMES } from "../utils/constants";
 
-/* ── Booking Confirmation Screen ─────────────────────────────────────────── */
+/* Booking Confirmation Screen  */
 function BookingConfirmed({ booking, onGoHome, onMyBookings }) {
   const [secs, setSecs] = useState(15);
   const stylist = booking.stylist;
@@ -61,7 +61,7 @@ function BookingConfirmed({ booking, onGoHome, onMyBookings }) {
   );
 }
 
-/* ── Main Book Page ─────────────────────────────────────────────────────── */
+/*Main Book Page */
 export default function BookPage() {
   const { user }  = useAuth();
   const navigate  = useNavigate();
@@ -92,7 +92,7 @@ export default function BookPage() {
     payment:     "Cash",
   });
 
-  // ── Load all stylists once on mount ────────────────────────────────────
+  //  Load all stylists once on mount 
   useEffect(() => {
     setStylistsLoading(true);
     stylistAPI.getAll()
@@ -155,7 +155,7 @@ export default function BookPage() {
     setErrors(e => ({ ...e, [key]: "" }));
   };
 
-  // ── Validation helpers ─────────────────────────────────────────────────
+  // Validation helpers 
   const validateStep1 = () => {
     const e = {};
     if (!form.name.trim())                           e.name  = "Full name is required";
@@ -187,7 +187,7 @@ export default function BookPage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // ── Submit booking ─────────────────────────────────────────────────────
+  // Submit booking 
   const handleSubmit = async () => {
     const e = validateStep3();
     if (Object.keys(e).length) { setErrors(e); return; }
@@ -225,7 +225,7 @@ export default function BookPage() {
     }
   };
 
-  // ── Show confirmation screen after successful booking ──────────────────
+  //  Show confirmation screen after successful booking
   if (confirmed) {
     return (
       <BookingConfirmed
@@ -236,7 +236,7 @@ export default function BookPage() {
     );
   }
 
-  // ── Derived values ─────────────────────────────────────────────────────
+  // Derived values 
   const serviceList = SERVICES[form.gender] || [];
 
   // Filter stylists: must match gender AND handle the selected service
@@ -260,7 +260,7 @@ export default function BookPage() {
   return (
     <div style={{ paddingTop:80, minHeight:"100vh", background:C.cream }}>
 
-      {/* ── Step header bar ─────────────────────────────────────────── */}
+      {/* Step header bar */}
       <div style={{ background:`linear-gradient(135deg,${C.purple},${C.navy})`, padding:"36px 24px" }}>
         <div style={{ maxWidth:700, margin:"0 auto", textAlign:"center" }}>
           <h1 style={{ fontFamily:"Cormorant Garamond", fontSize:"clamp(26px,4vw,44px)", color:"white", fontStyle:"italic", marginBottom:24 }}>
@@ -291,13 +291,13 @@ export default function BookPage() {
         </div>
       </div>
 
-      {/* ── Form card ───────────────────────────────────────────────── */}
+      {/* Form card  */}
       <div style={{ maxWidth:700, margin:"0 auto", padding:"36px 20px 60px" }}>
         <div style={{ background:"white", borderRadius:24, padding:"clamp(22px,5vw,40px)", boxShadow:"0 8px 40px rgba(0,0,0,0.09)" }}>
 
-          {/* ══════════════════════════════════════════════════════════
+          {/* 
               STEP 1 — Personal Information
-          ══════════════════════════════════════════════════════════ */}
+*/}
           {step === 1 && (
             <div className="fade-in">
               <h2 style={{ fontFamily:"Cormorant Garamond", fontSize:30, color:C.purple, marginBottom:28 }}>Personal Information</h2>
@@ -339,9 +339,9 @@ export default function BookPage() {
             </div>
           )}
 
-          {/* ══════════════════════════════════════════════════════════
-              STEP 2 — Service (single select) + Stylist
-          ══════════════════════════════════════════════════════════ */}
+          {/*
+              Service (single select) + Stylist
+ */}
           {step === 2 && (
             <div className="fade-in">
               <h2 style={{ fontFamily:"Cormorant Garamond", fontSize:30, color:C.purple, marginBottom:6 }}>Choose Service & Stylist</h2>
@@ -493,9 +493,8 @@ export default function BookPage() {
             </div>
           )}
 
-          {/* ══════════════════════════════════════════════════════════
-              STEP 3 — Date (filtered by stylist days) + Time Slots
-          ══════════════════════════════════════════════════════════ */}
+    
+        
           {step === 3 && (
             <div className="fade-in">
               <h2 style={{ fontFamily:"Cormorant Garamond", fontSize:30, color:C.purple, marginBottom:6 }}>Select Date & Time</h2>
@@ -548,7 +547,7 @@ export default function BookPage() {
                 </div>
               )}
 
-              {/* ── Time slot grid — only shown once a date is chosen ── */}
+              {/* Time slot grid — only shown once a date is chosen  */}
               {form.date && (
                 <div style={{ marginTop:20 }}>
                   <label style={{ marginBottom:10 }}>
@@ -629,7 +628,7 @@ export default function BookPage() {
                 </div>
               )}
 
-              {/* ── Payment mode ─────────────────────────────────────── */}
+              {/*  Payment mode */}
               <div className="form-group" style={{ marginTop:20, marginBottom:16 }}>
                 <label>Mode of Payment</label>
                 <select value={form.payment} onChange={e => update("payment", e.target.value)}>
@@ -640,7 +639,7 @@ export default function BookPage() {
                 </span>
               </div>
 
-              {/* ── Price summary ─────────────────────────────────────── */}
+              {/* Price summary */}
               {form.price > 0 && (
                 <div style={{ background:`${C.lavender}55`, borderRadius:14, padding:"16px 20px", marginBottom:20, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
                   <div>

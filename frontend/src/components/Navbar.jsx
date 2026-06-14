@@ -91,7 +91,7 @@ export default function Navbar() {
                   letterSpacing: 0.3, transition: "all 0.2s",
                   display: "flex", alignItems: "center", gap: 5,
                 }}>
-                  📊 Statistics
+                  Statistics
                 </Link>
               )}
 
@@ -104,7 +104,7 @@ export default function Navbar() {
                   fontSize: 12, fontWeight: 600, textDecoration: "none",
                   letterSpacing: 0.3,
                   boxShadow: `0 2px 8px rgba(17,19,68,0.25)`,
-                }}>🔐 Admin</Link>
+                }}>Admin</Link>
               )}
 
               {/* Account — purple border + text on white */}
@@ -177,14 +177,14 @@ export default function Navbar() {
                     color: C.rose, border: `1.5px solid ${C.rose}`,
                     padding: "10px 16px", borderRadius: 20, textDecoration: "none",
                     fontSize: 12, fontWeight: 700,
-                  }}>📊 Statistics</Link>
+                  }}>Statistics</Link>
                 )}
                 {user.isAdmin && (
                   <Link to="/admin" style={{
                     flex: 1, textAlign: "center", background: C.navy, color: "white",
                     padding: "10px 16px", borderRadius: 20, textDecoration: "none",
                     fontSize: 12, fontWeight: 700,
-                  }}>🔐 Admin</Link>
+                  }}>Admin</Link>
                 )}
                 <Link to="/account" style={{
                   flex: 1, textAlign: "center",
